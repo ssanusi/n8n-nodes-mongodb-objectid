@@ -1,4 +1,5 @@
-import { INodeType, INodeTypeDescription, IExecuteFunctions } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, IExecuteFunctions, NodeConnectionType } from 'n8n-workflow';
+import { ObjectId } from 'mongodb';
 import { MongoDBObjectId as MongoDBObjectIdNode } from './nodes/MongoDBObjectId/MongoDBObjectId.node';
 
 class MongoDBObjectIdHelper {
@@ -7,7 +8,7 @@ class MongoDBObjectIdHelper {
             const objectId = new ObjectId(inputString);
             return objectId.toString();
         } catch (error) {
-            throw new Error(`Invalid ObjectId format: ${error.message}`);
+            throw new Error(`Invalid ObjectId format: ${(error as Error).message}`);
         }
     }
 }
@@ -24,8 +25,8 @@ export class MongoDBObjectIdNodeHelper implements INodeType {
             name: 'MongoDB ObjectId',
             color: '#00BFFF',
         },
-        inputs: ['main'],
-        outputs: ['main'],
+        inputs: [{ type: NodeConnectionType.Main }],
+        outputs: [{ type: NodeConnectionType.Main }],
         properties: [
             {
                 displayName: 'Input String',
