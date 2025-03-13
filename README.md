@@ -1,21 +1,29 @@
-MIT License
+# n8n MongoDB ObjectId Node
 
-Copyright (c) 2025 Your Name
+This project provides an n8n node that enables the conversion of a string representation of a MongoDB ObjectId into an actual ObjectId instance. This functionality is essential for workflows that require interaction with MongoDB databases.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Purpose
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The primary purpose of this node is to facilitate the transformation of string values into MongoDB ObjectId objects, allowing for seamless integration with MongoDB operations within n8n workflows.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## Installation
+
+To install this node, clone the repository and navigate to the project directory. Then, run the following command to install the necessary dependencies:
+
+```
+npm install
+```
+
+## Usage
+
+Once installed, you can use the MongoDBObjectId node in your n8n workflows. The node provides a method called `convertToObjectId`, which takes a string input and returns the corresponding ObjectId.
+
+### Example
+
+1. Add the MongoDBObjectId node to your workflow.
+2. Provide a string input in the format `ObjectId("5f1d7f3e3a3b3c3d4e5f6a7b")`.
+3. The node will output the ObjectId instance that can be used in subsequent MongoDB operations.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
